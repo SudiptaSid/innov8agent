@@ -1,0 +1,108 @@
+// Blog Details One
+.blogDetailsOne {
+    img {
+        border-radius: 15px;
+        width: 100%;
+    }
+
+    p {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .imgSec {
+        margin-bottom: 24px;
+
+        img {
+            border-radius: 15px;
+            width: 100%;
+        }
+
+        small {
+            a {
+                font-weight: bold;
+            }
+        }
+    }
+
+    .blockquote {
+        margin: 24px 0;
+    }
+
+    .leftSec {
+        display: none;
+        flex-direction: column;
+        gap: 24px;
+
+        @include md {
+            display: flex;
+            gap: 32px;
+        }
+
+        .menuListOne {
+            li {
+                a {
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+
+    .rightSec {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        @include md {
+            gap: 32px;
+        }
+
+        .menuListOne {
+            margin-bottom: 24px;
+        }
+
+        #tableContent {
+            p {
+                @include paraL;
+            }
+        }
+
+        #conclusion {
+            .bgCard {
+                padding: 24px;
+                border-radius: 10px;
+                background-color: clr(light, hover);
+            }
+
+            .shortcode {
+                margin: 24px 0;
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .socialList {
+                @include md {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+// Recent Blog
+.blogRecent {
+    .blogSliderOne {
+        margin: 0 -6px;
+
+        .blogCardOne {
+            margin: 0 6px 15px;
+        }
+
+        .slick-arrow {
+            @include slickArrowOne;
+        }
+    }
+}

@@ -1,0 +1,235 @@
+// Price Compare Table
+.compareTable {
+    max-height: 100vh;
+    overflow-y: auto;
+
+    .compareRow {
+        display: grid;
+        grid-template-columns: 7fr 3fr 3fr 3fr;
+
+        @include lg {
+            grid-template-columns: 4fr 1fr 1fr 1fr;
+            border-bottom: 1px solid clr(dark, outline);
+        }
+
+        .compareCol {
+            padding: 10px 6px;
+
+            &:first-child {
+                border-left: none;
+            }
+
+            @include lg {
+                padding: 12px 15px;
+                border-left: 1px solid clr(dark, outline);
+            }
+        }
+
+        &.widthFull {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .compareHeader {
+        position: sticky;
+        top: 0;
+
+        .compareRow {
+            background-color: clr(light, outline);
+
+            .compareCol {
+                text-align: center;
+                padding: 10px 6px;
+
+                @include lg {
+                    padding: 24px 15px;
+                }
+
+                h6 {
+                    margin-bottom: 0;
+                    font-size: 13px;
+
+                    @include lg {
+                        font-size: 16px;
+                    }
+                }
+
+                p {
+                    margin: 5px 0 0;
+                    font-size: 12px;
+
+                    @include lg {
+                        font-size: 14px;
+                        margin: 10px 0;
+                    }
+
+                    b {
+                        display: block;
+                    }
+                }
+
+                a {
+                    display: none;
+                    color: clr(light, outline);
+                    background-color: clr(dark, main);
+                    padding: 8px 12px;
+                    border-radius: 6px;
+                    font-size: 12px;
+                    font-weight: 500;
+
+                    &:hover {
+                        background-color: clr(dark, hover);
+                    }
+
+                    @include lg {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    }
+
+    .compareTitle {
+        .compareRow {
+            border-bottom: none;
+
+            .compareCol {
+                padding: 24px 6px 12px 0;
+
+                @include lg {
+                    padding: 24px 15px 12px 0;
+                }
+
+                h5 {
+                    @include headingSix;
+                }
+            }
+        }
+    }
+
+    .featureList {
+        .featureItem {
+            line-height: 1.2;
+
+            &:nth-child(2n) {
+                background-color: clr(light, outline);
+            }
+
+            .compareRow {
+                .compareCol {
+                    b {
+                        display: block;
+                        font-weight: 500;
+                        color: clr(dark, main);
+                    }
+
+                    small {
+                        display: none;
+
+                        @include lg {
+                            display: block;
+                        }
+                    }
+
+                    span {
+                        display: block;
+                        text-align: center;
+                        font-size: 12px;
+
+                        @include lg {
+                            font-size: 1em;
+                        }
+                    }
+
+                    .iconSec {
+                        display: flex;
+                        justify-content: center;
+
+                        em {
+                            font-weight: 600;
+
+                            @include lg {
+                                font-size: 2em;
+                            }
+
+                            &.icon-check {
+                                color: clr(primary, main);
+                            }
+
+                            &.icon-close {
+                                color: clr(secondary, main);
+                            }
+                        }
+                    }
+                }
+
+                &.widthFull {
+                    @include lg {
+                        display: none;
+                    }
+
+                    .compareCol {
+                        small {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Table
+.tablePrice {
+    .table {
+        thead {
+            tr {
+                vertical-align: middle;
+
+                th {
+                    text-align: center;
+
+                    h6 {
+                        margin-bottom: 0;
+                    }
+
+                    .priceTag {
+                        font-size: 16px;
+                        font-weight: bold;
+                        color: clr(primary, main);
+
+                        span {
+                            font-size: 12px;
+                            color: clr(dark, focus);
+                        }
+                    }
+
+                    small {
+                        color: clr(dark, focus);
+                    }
+                }
+            }
+        }
+
+        tbody {
+            tr {
+                vertical-align: middle;
+                th,
+                td {
+                    padding: 10px 15px;
+                }
+
+                td {
+                    text-align: center;
+                }
+                &:nth-child(odd) {
+                    th,
+                    td {
+                        background-color: clr(blue, focus);
+                    }
+                }
+            }
+        }
+    }
+}

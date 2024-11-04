@@ -1,0 +1,38 @@
+.testimonialTwo {
+    .testimonialCardOne {
+        background-color: clr(light, main);
+        height: 100%;
+    }
+}
+
+.testimonialDetailsOne {
+    .testimonialCardOne {
+        border-radius: 0;
+        gap: 0;
+        padding: 0;
+
+        .avatar {
+            img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .name {
+                h5 {
+                    margin-bottom: 0;
+                    color: clr(dark, main);
+                }
+            }
+        }
+
+        .details {
+            p {
+                margin: 12px 0 0;
+            }
+        }
+
+        &:hover {
+            box-shadow: none;
+        }
+    }
+}

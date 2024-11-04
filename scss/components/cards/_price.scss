@@ -1,0 +1,374 @@
+// Price Card
+.priceCardOne {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    background-color: clr(light, outline);
+    padding: 24px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    transition: 0.6s all;
+
+    @include md {
+    }
+
+    .titleSec {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .iconSec {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            span {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                padding: 10px;
+                border-radius: 6px;
+                background-color: clr(primary, outline);
+
+                img {
+                    height: 34px;
+                    width: 34px;
+                }
+            }
+
+            div {
+                h6 {
+                    font-weight: normal;
+                    margin-bottom: 0;
+                }
+
+                h5 {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+
+    .priceSec {
+        h1 {
+            color: clr(primary, main);
+            margin-bottom: 0;
+
+            small {
+                color: clr(dark, main);
+                font-size: 18px;
+                font-weight: 500;
+            }
+        }
+    }
+
+    .detailsSec {
+        min-height: 550px;
+
+        h6 {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            li {
+                i {
+                    width: 20px;
+                    height: 20px;
+                    color: clr(light, outline);
+                    background-color: clr(primary, main);
+                    border-radius: 50%;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+
+        .viewAll {
+            margin-top: 10px;
+            text-align: center;
+
+            a {
+                font-size: 16px;
+                font-weight: 500;
+                color: clr(dark, hover);
+
+                &:hover {
+                    color: clr(primary, main);
+                }
+            }
+        }
+    }
+
+    .btnSec {
+        .btn {
+            width: 100%;
+        }
+    }
+
+    &.popularPrice {
+        color: clr(light, outline);
+        background-color: clr(primary, main);
+
+        .titleSec {
+            .iconSec {
+                span {
+                    background-color: clr(light, outline);
+                }
+
+                div {
+                    color: inherit;
+
+                    h6,
+                    h5 {
+                        color: inherit;
+                    }
+                }
+            }
+
+            p {
+                color: inherit;
+            }
+        }
+
+        .priceSec {
+            h1 {
+                color: inherit;
+
+                small {
+                    color: inherit;
+                }
+            }
+        }
+
+        .detailsSec {
+            h6 {
+                color: inherit;
+            }
+
+            ul {
+                li {
+                    i {
+                        color: clr(primary, main);
+                        background-color: clr(light, outline);
+                    }
+                }
+            }
+
+            .viewAll {
+                a {
+                    color: clr(light, outline);
+
+                    &:hover {
+                        color: clr(dark, main);
+                    }
+                }
+            }
+        }
+
+        .btnSec {
+            .btn {
+                color: clr(primary, main);
+                background-color: clr(light, outline);
+
+                &:hover,
+                &:focus {
+                    color: clr(primary, main);
+                    background-color: clr(light, focus);
+                }
+
+                em {
+                    color: clr(light, outline);
+                    background-color: clr(primary, main);
+                }
+            }
+        }
+    }
+
+    &:hover {
+        box-shadow: 0px 4px 20px rgba(clr(dark, hover), 0.2);
+    }
+}
+
+.priceCardTwo {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    background-color: clr(light, outline);
+    padding: 24px 15px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    transition: 0.6s all;
+
+    @include lg {
+        padding: 24px;
+    }
+
+    .titleSec {
+        h6 {
+            font-weight: normal;
+            margin-bottom: 0;
+            color: clr(dark, focus);
+        }
+
+        h5 {
+            margin-bottom: 0;
+        }
+    }
+
+    .priceSec {
+        h1 {
+            margin-bottom: 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+
+            div {
+                display: inline-flex;
+                flex-direction: column;
+
+                span {
+                    font-size: 50%;
+                    color: clr(dark, focus);
+                    text-decoration: line-through;
+                    font-weight: 500;
+                }
+
+                small {
+                    font-size: 12px;
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+
+    .detailsSec {
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            p {
+                margin-bottom: 0;
+                font-weight: 500;
+
+                em {
+                    font-size: 1.2em;
+                    font-weight: 600;
+                }
+            }
+
+            li {
+                padding-left: 20px;
+                position: relative;
+
+                &:before {
+                    content: "\e91c";
+                    font-family: "icomoon" !important;
+                    font-size: 1.2em;
+                    font-weight: 600;
+                    color: clr(dark, main);
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                }
+            }
+        }
+    }
+
+    .btnSec {
+        .btn {
+            width: 100%;
+        }
+    }
+
+    &.popularPrice {
+        border-color: clr(primary, main);
+
+        @include md {
+            border-radius: 0 0 10px 10px;
+        }
+
+        .popularTitle {
+            font-weight: 500;
+            color: clr(primary, main);
+            background-color: clr(primary, outline);
+            border: 1px solid clr(primary, main);
+            border-bottom: none;
+            border-radius: 10px 10px 0 0;
+            position: absolute;
+            left: -1px;
+            top: -1px;
+            padding: 10px 24px;
+            width: calc(100% + 2px);
+
+            @include md {
+                top: -42px;
+            }
+        }
+    }
+
+    &:hover {
+        box-shadow: 0px 4px 20px rgba(clr(dark, hover), 0.2);
+    }
+}
+
+.priceCardThree {
+    text-align: center;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    color: clr(light, outline);
+
+    @include md {
+        padding: 40px 80px;
+    }
+
+    span {
+        font-size: 12px;
+        font-weight: bold;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        padding: 8px 16px;
+        border-radius: 20px;
+        background-color: clr(primary, main);
+        max-width: max-content;
+
+        em {
+            font-size: 18px;
+        }
+    }
+
+    h5 {
+        margin-bottom: 0;
+        color: inherit;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+
+    &.style2 {
+        border-top: 1px solid clr(dark, hover);
+
+        @include md {
+            border-left: 1px solid clr(dark, hover);
+            border-top: none;
+        }
+    }
+}

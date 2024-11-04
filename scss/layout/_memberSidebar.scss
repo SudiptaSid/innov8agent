@@ -1,0 +1,135 @@
+.memberSidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    .menuListOne {
+        gap: 0;
+        flex-direction: row;
+        overflow-x: auto;
+
+        @include md {
+            flex-direction: column;
+        }
+
+        li {
+            a {
+                font-weight: 500;
+                padding: 15px;
+                background-color: clr(light, outline);
+                min-width: max-content;
+
+                &:hover,
+                &.active {
+                    background-color: clr(light, hover);
+                }
+            }
+        }
+    }
+
+    .savedBox {
+        .listItem {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 12px;
+            font-weight: 500;
+            padding: 10px;
+            background-color: clr(primary, outline);
+
+            img {
+                height: 20px;
+            }
+            span {
+                position: relative;
+                display: inline-flex;
+                align-items: center;
+                gap: 4px;
+
+                &:last-child {
+                    &:before {
+                        content: "";
+                        width: 6px;
+                        height: 6px;
+                        background-color: clr(primary, main);
+                        border-radius: 50%;
+                        display: inline;
+                    }
+                }
+            }
+        }
+    }
+
+    .bgGraph {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 24px;
+        padding: 24px 15px;
+        background-color: clr(light, hover);
+        border-radius: 10px;
+
+        @include md {
+            padding: 24px;
+        }
+
+        .title {
+            text-align: center;
+
+            p {
+                margin: 0;
+            }
+        }
+
+        .graph {
+            text-align: center;
+        }
+
+        .details {
+            p {
+                margin: 0;
+            }
+        }
+
+        .btnSec {
+            gap: 10px;
+            justify-content: center;
+
+            .smallBtn {
+                color: clr(light, outline);
+                background-image: linear-gradient(to right, #3300d9, #9d20c9, #df7a6c);
+                text-transform: uppercase;
+                font-size: 10px;
+                font-weight: 500;
+                line-height: 1.2;
+                text-align: center;
+                padding: 5px 12px;
+                border-radius: 20px;
+            }
+        }
+    }
+
+    .logoutSec {
+        img {
+            height: 60px;
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: clr(dark, main);
+            font-weight: 500;
+            padding: 15px 0;
+
+            &:hover,
+            &.active {
+                color: clr(primary, main);
+            }
+
+            em {
+                font-size: 1.5em;
+            }
+        }
+    }
+}

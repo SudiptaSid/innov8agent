@@ -1,0 +1,14 @@
+// About
+.aboutTwo {
+    background: linear-gradient(0deg, clr(dark, main), #16171f);
+
+    &:before {
+        display: none;
+    }
+
+    .sectionTitle {
+        h6 {
+            justify-content: center;
+        }
+    }
+}

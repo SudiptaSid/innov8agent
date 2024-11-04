@@ -1,0 +1,20 @@
+// Back To Top
+#back-to-top {
+    @include iconBtn;
+    color: clr(light, outline);
+    background-color: clr(primary, main);
+    opacity: 0;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 9;
+
+    &:hover {
+        color: clr(light, main);
+        background-color: clr(primary, hover);
+    }
+
+    &.show {
+        opacity: 1;
+    }
+}

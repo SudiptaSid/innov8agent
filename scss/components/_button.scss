@@ -1,0 +1,308 @@
+// Btn
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    font-size: 1em;
+    font-weight: 500;
+    line-height: 1.2;
+
+    padding: 4px;
+    padding-left: 24px;
+    position: relative;
+    z-index: 1;
+
+    border: 1px solid transparent;
+    border-radius: 36px;
+
+    box-shadow: none;
+    outline: none;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        box-shadow: none;
+        outline: none;
+    }
+
+    em {
+        @include iconBtn;
+        background-color: clr(light, outline);
+        line-height: 1;
+    }
+
+    &Primary {
+        color: clr(light, outline);
+        background-color: clr(primary, main);
+        border-color: clr(primary, focus);
+
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            color: clr(light, outline);
+            background-color: clr(primary, hover);
+            border-color: clr(primary, focus);
+        }
+
+        em {
+            color: clr(primary, main);
+        }
+    }
+
+    &Secondary {
+        color: clr(light, outline);
+        background-color: clr(secondary, main);
+        border-color: clr(secondary, focus);
+
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            color: clr(light, outline);
+            background-color: clr(secondary, hover);
+            border-color: clr(secondary, focus);
+        }
+
+        em {
+            color: clr(secondary, main);
+        }
+    }
+
+    &White {
+        color: clr(dark, main);
+        background-color: clr(light, focus);
+        border-color: clr(light, outline);
+
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            color: clr(dark, main);
+            background-color: clr(light, main);
+            border-color: clr(light, focus);
+        }
+
+        em {
+            color: clr(dark, main);
+            background-color: clr(light, main);
+        }
+    }
+
+    &PrimaryBorder {
+        color: clr(primary, main);
+        background-color: transparent;
+        border-color: clr(primary, main);
+
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            color: clr(light, outline);
+            background-color: clr(primary, hover);
+            border-color: clr(primary, focus);
+        }
+    }
+
+    &SecondaryBorder {
+        color: clr(secondary, main);
+        background-color: transparent;
+        border-color: clr(secondary, main);
+
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            color: clr(light, outline);
+            background-color: clr(secondary, hover);
+            border-color: clr(secondary, focus);
+        }
+    }
+
+    &.style2 {
+        padding: 14px 24px;
+        gap: 0;
+        justify-content: center;
+    }
+}
+
+.btnSec {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    @include md {
+        gap: 24px;
+    }
+
+    .btn {
+        height: 100%;
+    }
+}
+
+// Social Button
+.socialBtn {
+    color: clr(blue, main);
+    background-color: clr(blue, outline);
+    font-size: 1em;
+    font-weight: 500;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 6px;
+    padding: 14px;
+
+    &:hover {
+        color: clr(dark, main);
+    }
+
+    span {
+        span {
+            display: none;
+            margin-right: 5px;
+
+            @include md {
+                display: inline-block;
+            }
+        }
+    }
+
+    img {
+        height: 24px;
+        width: 24px;
+    }
+}
+
+// Tag Link
+.tagLink {
+    display: inline-block;
+    font-size: 1em;
+    font-weight: 500;
+    color: clr(dark, main);
+    background-color: clr(light, hover);
+    border: 1px solid clr(dark, outline);
+    border-radius: 20px;
+    padding: 4px 10px;
+
+    &:hover {
+        color: clr(dark, main);
+    }
+
+    &.geen {
+        color: clr(primary, main);
+    }
+
+    &.blue {
+        color: clr(blue, main);
+    }
+}
+
+// Status Btn
+.statusBtn {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 12px;
+    color: clr(dark, main);
+    border: 1px solid clr(dark, main);
+    border-radius: 4px;
+    background-color: transparent;
+
+    &.active {
+        color: clr(primary, main);
+        background-color: clr(primary, outline);
+        border-color: clr(primary, main);
+
+        &:hover {
+            background-color: clr(primary, focus);
+        }
+    }
+    &.inactive {
+        color: clr(secondary, main);
+        background-color: clr(secondary, outline);
+        border-color: clr(secondary, main);
+
+        &:hover {
+            background-color: clr(secondary, focus);
+        }
+    }
+}
+
+// Btn Short
+.btnShort {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    a {
+        @include iconBtn;
+        font-size: 12px;
+        color: clr(dark, focus);
+        background-color: clr(light, outline);
+        border: 1px solid clr(dark, outline);
+        border-radius: 6px;
+        width: auto;
+        padding: 0 6px;
+        min-width: 32px;
+        height: 32px;
+
+        &:hover,
+        &.active {
+            color: clr(light, outline);
+            background-color: clr(primary, main);
+            border-color: clr(primary, main);
+        }
+    }
+}
+
+// Btn Effect
+.btnPrice {
+    font-size: 1em;
+    font-weight: 500;
+    line-height: 1.6;
+
+    color: clr(dark, main);
+    background-color: transparent;
+
+    position: relative;
+    padding: 8px 24px;
+    z-index: 1;
+
+    border: none;
+    border-radius: 36px;
+
+    box-shadow: none;
+    outline: none;
+
+    overflow: hidden;
+
+    &:before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: clr(primary, main);
+        position: absolute;
+        top: 0;
+        left: -100%;
+        z-index: -1;
+        transition: left 0.2s ease, width 0.2s ease;
+    }
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        color: clr(light, outline);
+
+        box-shadow: none;
+        outline: none;
+
+        &::before {
+            left: 0;
+        }
+    }
+}

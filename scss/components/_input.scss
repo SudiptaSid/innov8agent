@@ -1,0 +1,401 @@
+/* ----- Form Control ----- */
+.form-group {
+    margin-bottom: 15px;
+
+    > label {
+        &:first-child {
+            font-size: 13px;
+            font-weight: 500;
+            color: clr(dark, main);
+            margin-bottom: 4px;
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+
+            em {
+                font-size: 1.2em;
+                color: clr(dark, focus);
+            }
+
+            sup {
+                font-size: 1.5em;
+                top: 0;
+                color: clr(secondary, main);
+            }
+        }
+    }
+
+    .inputBox {
+        position: relative;
+
+        .form-control,
+        .form-select {
+            color: clr(dark, main);
+            background-color: transparent;
+            border: 1px solid clr(dark, outline);
+            border-radius: 6px;
+            padding: 14px 15px;
+            font-size: 1em;
+            line-height: 1.2;
+            white-space: pre-wrap;
+            box-shadow: none;
+            outline: none;
+
+            &:hover,
+            &:focus {
+                box-shadow: none;
+                outline: none;
+            }
+
+            &:focus {
+                border-color: clr(primary, main);
+            }
+
+            &::placeholder {
+                color: clr(dark, focus);
+            }
+        }
+
+        em {
+            font-size: 1.2em;
+            color: clr(dark, focus);
+            position: absolute;
+            top: 15px;
+        }
+
+        &.leftIcon {
+            .form-control {
+                padding-left: 34px;
+            }
+
+            .emLeft {
+                left: 10px;
+            }
+        }
+
+        &.rightIcon {
+            .form-control {
+                padding-right: 34px;
+            }
+
+            .emRight {
+                right: 10px;
+            }
+        }
+    }
+
+    small {
+        font-size: 11px;
+        display: inline-block;
+    }
+}
+
+/* ----- Toggle Switch ----- */
+.toggleSwitch {
+    position: relative;
+    display: inline-block;
+    width: 36px;
+    height: 20px;
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: clr(light, main);
+        border: 1px solid clr(dark, outline);
+        border-radius: 34px;
+        transition: 0.4s;
+
+        &:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: -1px;
+            top: -1px;
+            background-color: clr(light, outline);
+            border: 1px solid clr(dark, outline);
+            border-radius: 50%;
+            transition: 0.4s;
+        }
+    }
+
+    input {
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        &:checked {
+            + .slider {
+                background-color: clr(primary, main);
+
+                &:before {
+                    transform: translateX(16px);
+                }
+            }
+        }
+    }
+}
+
+/* ----- Checkbox ----- */
+.customCheckbox {
+    font-weight: 500;
+    display: block;
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 0;
+    cursor: pointer;
+    user-select: none;
+
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: clr(light, outline);
+        border: 1px solid clr(dark, outline);
+        border-radius: 4px;
+
+        &:after {
+            content: "";
+            position: absolute;
+            display: none;
+            left: 6px;
+            top: 3px;
+            width: 6px;
+            height: 10px;
+            border: solid clr(light, outline);
+            border-width: 0 3px 3px 0;
+            transform: rotate(45deg);
+        }
+    }
+
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+
+        &:checked ~ .checkmark {
+            background-color: clr(primary, main);
+            border-color: clr(primary, main);
+
+            &:after {
+                display: block;
+            }
+        }
+    }
+
+    a {
+        font-weight: 500;
+    }
+}
+
+/* ----- Radio ----- */
+.customRadio {
+    font-weight: 500;
+    display: block;
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 0;
+    cursor: pointer;
+    user-select: none;
+
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: clr(light, outline);
+        border: 1px solid clr(dark, outline);
+        border-radius: 50%;
+
+        &:after {
+            content: "";
+            position: absolute;
+            display: none;
+            top: 4px;
+            left: 4px;
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background-color: clr(light, outline);
+        }
+    }
+
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+
+        &:checked ~ .checkmark {
+            background-color: clr(primary, main);
+            border-color: clr(primary, main);
+
+            &:after {
+                display: block;
+            }
+        }
+    }
+}
+
+/* ----- File Uplolader ----- */
+.fileUploader {
+    .gap-y1 {
+        gap: 15px 0;
+    }
+
+    h6 {
+        margin-bottom: 0;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+
+    .imgUploaer {
+        position: relative;
+        z-index: 4;
+
+        input[type="file"] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+            z-index: 7;
+        }
+
+        .boxSec {
+            text-align: center;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #06c270;
+            border-radius: 6px;
+            position: relative;
+
+            em {
+                @include iconBtn;
+                border-radius: 4px;
+                color: #ffffff;
+                background-color: #06c270;
+            }
+
+            p {
+                margin-top: 15px;
+
+                span {
+                    color: #06c270;
+                    font-weight: 500;
+                }
+
+                small {
+                    display: block;
+                }
+            }
+        }
+
+        .btn {
+            z-index: -1;
+        }
+    }
+
+    .imgSec {
+        position: relative;
+
+        img {
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+            border-radius: 6px;
+        }
+    }
+}
+
+/* ----- Profile Image Uploader ----- */
+.profileImg {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .uploadBtn {
+        position: relative;
+
+        input[type="file"] {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        span {
+            font-weight: 500;
+            padding: 6px 12px;
+            color: clr(dark, main);
+            border: 1px solid clr(dark, main);
+            border-radius: 30px;
+            display: inline-block;
+        }
+    }
+}
+
+.profileImgTwo {
+    width: 80px;
+    height: 80px;
+
+    > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 50%;
+    }
+
+    .uploadBtn {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+        input[type="file"] {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        em {
+            @include iconBtn;
+            width: 30px;
+            height: 30px;
+            color: clr(light, outline);
+            background-color: clr(blue, main);
+            font-weight: 500;
+        }
+    }
+}
